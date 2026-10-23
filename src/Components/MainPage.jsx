@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import cover from "../assets/cover.png";
-// Import your couple profile images here when ready, e.g.:
 import groomImg from "../assets/groom.jpg";
- import brideImg from "../assets/bride.png";
+import brideImg from "../assets/bride.png";
 
 export default function MainPage() {
   // Target Date: 20 November 2026
@@ -40,7 +39,7 @@ export default function MainPage() {
       
       {/* SECTION 1: Cover Screen */}
       <section
-        className="w-full max-w-md h-[100svh] flex flex-col justify-between items-center text-center px-6 pt-6 pb-12 bg-cover bg-center bg-no-repeat relative overflow-hidden "
+        className="w-full max-w-md h-[100svh] flex flex-col justify-between items-center text-center px-6 pt-6 pb-12 bg-cover bg-center bg-no-repeat relative overflow-hidden"
         style={{
           backgroundImage: `url(${cover})`,
         }}
@@ -186,9 +185,44 @@ export default function MainPage() {
           ))}
         </div>
 
- 
+        {/* Couple Profile Circles (Groom & Bride) */}
+        <div className="flex justify-center items-center gap-6 sm:gap-8 w-full max-w-sm mb-8">
+          {/* Groom Profile */}
+          <div className="flex flex-col items-center">
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-amber-900/30 overflow-hidden shadow-lg bg-amber-100 relative">
+              <img
+                src={groomImg}
+                alt="Jerrold A"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <h3 className="font-playfair text-lg sm:text-xl font-bold text-amber-950 mt-3">
+              Jerrold A
+            </h3>
+            <p className="font-serif font-bold text-xs sm:text-sm text-stone-700 tracking-wide">
+              TCS
+            </p>
+          </div>
 
-        {/* Warm Closing Note (Names Removed) */}
+          {/* Bride Profile */}
+          <div className="flex flex-col items-center">
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-amber-900/30 overflow-hidden shadow-lg bg-amber-100 relative">
+              <img
+                src={brideImg}
+                alt="Priyanka R"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <h3 className="font-playfair text-lg sm:text-xl font-bold text-amber-950 mt-3">
+              Priyanka R
+            </h3>
+            <p className="font-serif font-bold text-xs sm:text-sm text-stone-700 tracking-wide">
+              TCS
+            </p>
+          </div>
+        </div>
+
+        {/* Warm Closing Note */}
         <div className="space-y-2 pt-2">
           <p className="font-playfair italic text-2xl sm:text-3xl text-amber-900">
             We look forward to seeing you!
@@ -200,44 +234,6 @@ export default function MainPage() {
             With Love
           </p>
         </div>
-               {/* Couple Profile Circles (Groom & Bride) */}
-<div className="flex justify-center items-center gap-6 sm:gap-8 w-full max-w-sm mb-8">
-
-  {/* Groom Profile */}
-  <div className="flex flex-col  items-center">
-    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-amber-900/30 overflow-hidden shadow-lg bg-amber-100 relative">
-      <img
-        src={groomImg}
-        alt="Jerrold A"
-        className="w-full h-full object-cover object-top"
-      />
-    </div>
-    <h3 className="font-playfair text-lg sm:text-xl font-bold text-amber-950 mt-3">
-      Jerrold A
-    </h3>
-    <p className="font-serif font-bold text-xs sm:text-sm text-stone-700 tracking-wide">
-      TCS
-    </p>
-  </div>
-
-  {/* Bride Profile */}
-  <div className="flex flex-col items-center">
-    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-amber-900/30 overflow-hidden shadow-lg bg-amber-100 relative">
-      <img
-        src={brideImg}
-        alt="Priyanka R"
-        className="w-full h-full object-cover object-top"
-      />
-    </div>
-    <h3 className="font-playfair text-lg sm:text-xl font-bold text-amber-950 mt-3">
-      Priyanka R
-    </h3>
-    <p className="font-serif font-bold text-xs sm:text-sm text-stone-700 tracking-wide">
-      TCS
-    </p>
-  </div>
-
-</div>
       </section>
 
     </main>
