@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cherry+Swash&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Cinzel+Decorative:wght@700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-cherry: "Cherry Swash", serif;
+  --font-great-vibes: "Great Vibes", cursive;
+  --font-playfair: "Playfair Display", serif;
+  --font-cinzel: "Cinzel Decorative", serif;
+}
