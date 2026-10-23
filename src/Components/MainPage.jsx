@@ -40,7 +40,7 @@ export default function MainPage() {
       
       {/* SECTION 1: Cover Screen */}
       <section
-        className="w-full max-w-md min-h-[100svh] h-screen flex flex-col justify-between items-center text-center px-6 pt-6 pb-12 bg-cover bg-center bg-no-repeat relative overflow-hidden"
+        className="w-full max-w-md h-[100svh] flex flex-col justify-between items-center text-center px-6 pt-6 pb-12 bg-cover bg-center bg-no-repeat relative overflow-hidden "
         style={{
           backgroundImage: `url(${cover})`,
         }}
