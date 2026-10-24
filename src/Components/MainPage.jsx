@@ -64,7 +64,7 @@ export default function MainPage() {
       {/* SECTION 1: COVER */}
      {/* SECTION 1: COVER */}
 <section
-  className="w-full max-w-[480px] min-h-[60svh] mx-auto flex flex-col justify-between items-center text-center px-5 sm:px-7 pt-12 bg-cover bg-center bg-no-repeat relative overflow-hidden"
+  className="w-full max-w-[480px] min-h-[60svh] mx-auto flex flex-col justify-between items-center text-center px-5 sm:px-7 pt-18 bg-cover bg-center bg-no-repeat relative overflow-hidden"
   style={{ backgroundImage: `url(${cover})` }}
 >
   {/* Top Header Names */}
@@ -335,10 +335,10 @@ export default function MainPage() {
             <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full border-4 border-amber-900/30 bg-white/80 backdrop-blur-md shadow-xl flex flex-col justify-center items-center p-3 transition-transform duration-300 group-hover:scale-105 group-hover:border-amber-900">
               <span className="text-2xl sm:text-3xl mb-1">⛪</span>
               <span className="font-playfair font-bold text-amber-950 text-xs sm:text-sm">
-                Church
+                Wedding
               </span>
               <span className="font-cherry text-[10px] text-stone-500 mt-0.5">
-                Karur
+                Church
               </span>
             </div>
             <h3 className="font-playfair text-xs sm:text-base font-bold text-amber-950 mt-3 group-hover:underline">
