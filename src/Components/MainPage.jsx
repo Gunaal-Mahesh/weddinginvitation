@@ -62,74 +62,49 @@ export default function MainPage() {
     <main className="w-full min-h-screen overflow-x-hidden bg-[#fdf6ed] flex flex-col items-center select-none">
 
       {/* SECTION 1: COVER */}
-      <section
-        className="w-full max-w-[480px] min-h-[100svh] mx-auto flex flex-col items-center text-center px-5 sm:px-7 pt-[11svh] pb-7 bg-cover bg-center bg-no-repeat relative overflow-hidden"
-        style={{ backgroundImage: `url(${cover})` }}
-      >
-        {/* Header */}
-        <div className="w-full flex flex-col justify-center items-center gap-1 z-10 px-2">
-          <div className="font-cherry text-[10px] sm:text-xs tracking-[1.5px] text-black font-semibold max-w-xs leading-snug drop-shadow-sm">
-            <span>Wedding date</span>
-            <span className="block font-bold text-amber-900 mt-0.5">
-              20 November 2026
-            </span>
-          </div>
+     {/* SECTION 1: COVER */}
+<section
+  className="w-full max-w-[480px] min-h-[100svh] mx-auto flex flex-col justify-between items-center text-center px-5 sm:px-7 pt-8 pb-6 bg-cover bg-center bg-no-repeat relative overflow-hidden"
+  style={{ backgroundImage: `url(${cover})` }}
+>
+  {/* Top Header Names */}
+  <div className="w-full flex flex-col justify-center items-center gap-1 z-10 px-2 pt-2">
+    <div className="font-cherry text-[10px] sm:text-xs tracking-[1.5px] text-black font-semibold max-w-xs leading-snug drop-shadow-sm">
+      <span>Wedding date</span>
+      <span className="block font-bold text-amber-900 mt-0.5">
+        20 November 2026
+      </span>
+    </div>
 
-          <h1 className="font-playfair text-amber-950  text-2xl sm:text-4xl font-bold leading-tight flex flex-col items-center my-1 drop-shadow-sm">
-            <span>JERROLD A</span>
-            <span className="text-xl sm:text-2xl my-0.5">&</span>
-            <span>PRIYANKA R</span>
-          </h1>
-        </div>
+    <h1 className="font-playfair text-amber-950 text-2xl sm:text-4xl font-bold leading-tight flex flex-col items-center my-1 drop-shadow-sm">
+      <span>JERROLD A</span>
+      <span className="text-xl sm:text-2xl my-0.5">&amp;</span>
+      <span>PRIYANKA R</span>
+    </h1>
+  </div>
 
-        {/* Flexible space for background artwork */}
-        <div className="h-4 sm:h-6" />
+  {/* Clear Spacer to push text below the swans artwork */}
+  <div className="h-[22vh] sm:h-[25vh] pointer-events-none" />
 
-        {/* Invitation Details */}
-        <div className="w-full pt-1 flex flex-col justify-start items-center gap-2 z-10">
-          <div className="font-playfair italic text-lg sm:text-2xl text-amber-900 font-medium leading-tight">
-            <span>Jerrold & Priyanka</span>
-            <span className="block text-base sm:text-xl text-amber-800">
-              warmly invite you
-            </span>
-          </div>
+  {/* Invitation Text Container (Positioned neatly in cream section below flowers) */}
+  <div className="w-full flex flex-col justify-start items-center gap-2 z-10 my-auto">
+    <div className="font-playfair italic text-lg sm:text-2xl text-amber-900 font-medium leading-tight">
+      <span>Jerrold &amp; Priyanka</span>
+      <span className="block text-base sm:text-xl text-amber-800">
+        warmly invite you
+      </span>
+    </div>
 
-          <p className="font text-[10px] sm:text-xs tracking-[1px] text-stone-800 uppercase font-medium mt-2 max-w-xs leading-relaxed">
-            "With the blessings of God and our beloved families, we cordially invite you to celebrate the wedding"
-          </p>
-        </div>
+    <p className="font text-[11px] sm:text-xs tracking-[1px] text-stone-800 uppercase font-medium mt-1 max-w-xs leading-relaxed">
+      "With the blessings of God and our beloved families, we cordially invite you to celebrate the wedding"
+    </p>
+  </div>
 
-        {/* Invitation Image */}
-        {/* <div className="flex flex-wrap justify-center pt-4 z-10">
-          <a
-            href="/in.jpg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full bg-amber-900/90 text-white font-cherry text-xs sm:text-sm tracking-wide shadow-md hover:bg-amber-950 transition-all duration-200"
-          >
-            View Invitation 📄
-          </a>
-        </div> */}
-
-        {/* Scroll Indicator */}
-        <div className="animate-bounce text-stone-600 font-medium text-xs mt-auto pt-6 z-10">
-          Scroll Down ↓
-        </div>
-
-        {/* Torn Border */}
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none z-0">
-          <svg
-            className="block w-full h-[32px] sm:h-[45px]"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,0 C150,40 350,-20 500,25 C650,70 800,10 950,35 C1100,60 1150,15 1200,30 L1200,120 L0,120 Z"
-              fill="#fdf6ed"
-            />
-          </svg>
-        </div>
-      </section>
+  {/* Scroll Indicator */}
+  <div className="animate-bounce text-stone-600 font-medium text-xs pb-1 z-10">
+    Scroll Down ↓
+  </div>
+</section>
 
       {/* SECTION 2: EVENT DETAILS */}
       <section className="w-full max-w-[480px] mx-auto bg-[#fdf6ed] px-4 sm:px-6 pt-10 pb-12 flex flex-col items-center text-center relative overflow-hidden">
