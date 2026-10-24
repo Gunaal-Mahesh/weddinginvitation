@@ -158,7 +158,7 @@ export default function MainPage() {
       </section>
 
       {/* SECTION 3: Live Countdown & Couple Profile Cards */}
-      <section className="w-full max-w-md bg-[#f7e5d1] px-6 pt-6 pb-12 flex flex-col items-center text-center">
+      <section className="w-full max-w-md bg-[#f7e5d1] px-6 pt-6 pb-6 flex flex-col items-center text-center">
         <h2 className="font-playfair text-3xl sm:text-4xl italic text-amber-950 border-b border-amber-900/20 pb-3 w-full mb-6">
           The Celebration Begins In
         </h2>
@@ -185,8 +185,21 @@ export default function MainPage() {
           ))}
         </div>
 
+        {/* Warm Closing Note */}
+        <div className="space-y-2 pt-2 mb-6">
+          <p className="font-playfair italic text-2xl sm:text-3xl text-amber-900">
+            We look forward to seeing you!
+          </p>
+          <p className="font-cherry text-xs sm:text-sm text-stone-700 max-w-xs mx-auto leading-relaxed">
+            Your presence will make our special day even more memorable.
+          </p>
+          <p className="font-cinzel text-sm sm:text-base font-bold text-amber-950 pt-2 tracking-wider">
+            With Love
+          </p>
+        </div>
+        
         {/* Couple Profile Circles (Groom & Bride) */}
-        <div className="flex justify-center items-center gap-6 sm:gap-8 w-full max-w-sm mb-8">
+        <div className="flex justify-center items-center gap-6 sm:gap-8 w-full max-w-sm mb-2">
           {/* Groom Profile */}
           <div className="flex flex-col items-center">
             <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-amber-900/30 overflow-hidden shadow-lg bg-amber-100 relative">
@@ -221,18 +234,78 @@ export default function MainPage() {
             </p>
           </div>
         </div>
+      </section>
 
-        {/* Warm Closing Note */}
-        <div className="space-y-2 pt-2">
-          <p className="font-playfair italic text-2xl sm:text-3xl text-amber-900">
-            We look forward to seeing you!
-          </p>
-          <p className="font-cherry text-xs sm:text-sm text-stone-700 max-w-xs mx-auto leading-relaxed">
-            Your presence will make our special day even more memorable.
-          </p>
-          <p className="font-cinzel text-sm sm:text-base font-bold text-amber-950 pt-2 tracking-wider">
-            With Love
-          </p>
+      {/* SECTION 4: Location & Map Links */}
+      <section className="w-full max-w-md bg-[#fdf6ed] px-6 pt-8 pb-16 flex flex-col items-center text-center relative overflow-hidden">
+        
+        {/* Non-linear Torn Paper Top Border */}
+        <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none z-0 rotate-180">
+          <svg
+            className="relative block w-full h-[28px] sm:h-[40px]"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0 C150,40 350,-20 500,25 C650,70 800,10 950,35 C1100,60 1150,15 1200,30 L1200,120 L0,120 Z"
+              fill="#f7e5d1"
+            ></path>
+          </svg>
+        </div>
+
+        {/* Section Heading */}
+        <h2 className="font-playfair text-3xl sm:text-4xl italic text-amber-950 mb-2 z-10 pt-2">
+          Location &amp; Venues
+        </h2>
+        <p className="font-cherry text-xs sm:text-sm text-stone-600 mb-8 max-w-xs z-10">
+          Tap below to view the locations on Google Maps
+        </p>
+
+        {/* Two Circular Location Links */}
+        <div className="flex justify-center items-center gap-6 sm:gap-8 w-full max-w-sm z-10">
+          
+          {/* Church Location Circle Link */}
+          <a
+            href="https://maps.google.com/?q=St.+Theresa's+Church+Karur"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center group cursor-pointer"
+          >
+            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-amber-900/30 bg-white/80 backdrop-blur-md shadow-xl flex flex-col justify-center items-center p-3 transition-transform duration-300 group-hover:scale-105 group-hover:border-amber-900">
+              <span className="text-2xl sm:text-3xl mb-1">⛪</span>
+              <span className="font-playfair font-bold text-amber-950 text-xs sm:text-sm">
+                Church
+              </span>
+              <span className="font-cherry text-[10px] text-stone-500 mt-0.5">
+                Karur
+              </span>
+            </div>
+            <h3 className="font-playfair text-sm sm:text-base font-bold text-amber-950 mt-3 group-hover:underline">
+              St. Theresa's Church
+            </h3>
+          </a>
+
+          {/* Mahal Location Circle Link */}
+          <a
+            href="https://maps.google.com/?q=DP+Mahal+Pasupathipalayam+Karur"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center group cursor-pointer"
+          >
+            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-amber-900/30 bg-white/80 backdrop-blur-md shadow-xl flex flex-col justify-center items-center p-3 transition-transform duration-300 group-hover:scale-105 group-hover:border-amber-900">
+              <span className="text-2xl sm:text-3xl mb-1">🏛️</span>
+              <span className="font-playfair font-bold text-amber-950 text-xs sm:text-sm">
+                Reception
+              </span>
+              <span className="font-cherry text-[10px] text-stone-500 mt-0.5">
+                Mahal
+              </span>
+            </div>
+            <h3 className="font-playfair text-sm sm:text-base font-bold text-amber-950 mt-3 group-hover:underline">
+              D.P. Mahal
+            </h3>
+          </a>
+
         </div>
       </section>
 
