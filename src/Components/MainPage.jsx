@@ -5,7 +5,7 @@ import groomImg from "../assets/groom.jpg";
 import brideImg from "../assets/bride.png";
 
 export default function MainPage() {
-  const targetDate = new Date("2026-11-20T00:00:00").getTime();
+  const targetDate = new Date("2026-11-20T09:15:00").getTime();
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -91,7 +91,7 @@ export default function MainPage() {
     <div className="font-playfair italic text-lg sm:text-2xl text-amber-900 font-medium leading-tight">
       <span>Jerrold &amp; Priyanka</span>
       <span className="block text-base sm:text-xl text-amber-800">
-        warmly invite you
+        
       </span>
     </div>
 
@@ -183,7 +183,8 @@ export default function MainPage() {
       <section className="w-full max-w-[480px] mx-auto bg-[#f7e5d1] px-4 sm:px-6 pt-8 pb-10 flex flex-col items-center text-center">
 
         <h2 className="reveal font-playfair text-2xl sm:text-4xl italic text-amber-950 border-b border-amber-900/20 pb-3 w-full mb-7">
-          The Celebration Begins In
+          Until we say forever!
+
         </h2>
 
         {/* Countdown */}
