@@ -83,7 +83,7 @@ export default function MainPage() {
         </div>
 
         {/* Flexible space for background artwork */}
-        <div className="flex-1 min-h-[15vh]" />
+        <div className="flex-1 h-4 sm:h-6" />
 
         {/* Invitation Details */}
         <div className="w-full pt-1 flex flex-col justify-start items-center gap-2 z-10">
