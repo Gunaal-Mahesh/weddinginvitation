@@ -100,7 +100,7 @@ export default function MainPage() {
         </div>
 
         {/* Invitation Image */}
-        <div className="flex flex-wrap justify-center pt-4 z-10">
+        {/* <div className="flex flex-wrap justify-center pt-4 z-10">
           <a
             href="/in.jpg"
             target="_blank"
@@ -109,7 +109,7 @@ export default function MainPage() {
           >
             View Invitation 📄
           </a>
-        </div>
+        </div> */}
 
         {/* Scroll Indicator */}
         <div className="animate-bounce text-stone-600 font-medium text-xs mt-auto pt-6 z-10">
@@ -238,42 +238,79 @@ export default function MainPage() {
         </div>
 
         {/* Couple Profiles */}
-        <div className="flex justify-center items-start gap-5 sm:gap-10 w-full max-w-sm mb-2">
+       <div className="flex justify-center items-center gap-3 sm:gap-6 w-full max-w-md mb-2 relative px-2">
 
-          {/* Groom */}
-          <div className="reveal-left flex flex-col items-center flex-1 min-w-0">
-            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-amber-900/30 overflow-hidden shadow-lg bg-amber-100">
-              <img
-                src={groomImg}
-                alt="Jerrold A"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-            <h3 className="font-playfair text-base sm:text-xl font-bold text-amber-950 mt-3">
-              Jerrold A
-            </h3>
-            <p className="font-serif font-bold text-xs sm:text-sm text-stone-700 tracking-wide">
-              TCS
-            </p>
-          </div>
+  {/* Background Flourish Decor (Left) */}
+  <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-20 pointer-events-none hidden sm:block">
+    <svg width="40" height="80" viewBox="0 0 50 100" fill="none">
+      <path d="M10,10 C30,30 30,70 10,90 M20,25 C40,40 40,60 20,75" stroke="#78350f" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  </div>
 
-          {/* Bride */}
-          <div className="reveal-right flex flex-col items-center flex-1 min-w-0">
-            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-amber-900/30 overflow-hidden shadow-lg bg-amber-100">
-              <img
-                src={brideImg}
-                alt="Priyanka R"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-            <h3 className="font-playfair text-base sm:text-xl font-bold text-amber-950 mt-3">
-              Priyanka R
-            </h3>
-            <p className="font-serif font-bold text-xs sm:text-sm text-stone-700 tracking-wide">
-              TCS
-            </p>
-          </div>
-        </div>
+  {/* Groom */}
+  <div className="reveal-left flex flex-col items-center flex-1 min-w-0 z-10">
+    <div className="relative group">
+      {/* Outer Glow Ring */}
+      <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-amber-300 to-amber-600 opacity-30 group-hover:opacity-70 blur-sm transition-opacity duration-300"></div>
+      
+      {/* Profile Image Circle */}
+      <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-amber-900/30 overflow-hidden shadow-xl bg-amber-100 transition-transform duration-300 group-hover:scale-105">
+        <img
+          src={groomImg}
+          alt="Jerrold A"
+          className="w-full h-full object-cover object-top"
+        />
+      </div>
+    </div>
+    
+    <h3 className="font-playfair text-base sm:text-xl font-bold text-amber-950 mt-3">
+      Jerrold A
+    </h3>
+  </div>
+
+  {/* Center Decorative Divider with Pulsing Heart */}
+  <div className="flex flex-col items-center justify-center shrink-0 z-10 px-1 pt-2">
+    {/* Subtle Vertical Vine Line */}
+    <div className="w-[1px] h-6 bg-amber-900/20" />
+    
+    {/* Pulsing Animated Heart Badge */}
+    <div className="w-8 h-8 rounded-full bg-amber-100/90 border border-amber-900/30 flex items-center justify-center shadow-md my-1 animate-pulse">
+      <span className="text-amber-900 text-xs sm:text-sm">💖</span>
+    </div>
+    
+    {/* Subtle Vertical Vine Line */}
+    <div className="w-[1px] h-6 bg-amber-900/20" />
+  </div>
+
+  {/* Bride */}
+  <div className="reveal-right flex flex-col items-center flex-1 min-w-0 z-10">
+    <div className="relative group">
+      {/* Outer Glow Ring */}
+      <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-amber-300 to-amber-600 opacity-30 group-hover:opacity-70 blur-sm transition-opacity duration-300"></div>
+      
+      {/* Profile Image Circle */}
+      <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-amber-900/30 overflow-hidden shadow-xl bg-amber-100 transition-transform duration-300 group-hover:scale-105">
+        <img
+          src={brideImg}
+          alt="Priyanka R"
+          className="w-full h-full object-cover object-top"
+        />
+      </div>
+    </div>
+    
+    <h3 className="font-playfair text-base sm:text-xl font-bold text-amber-950 mt-3">
+      Priyanka R
+    </h3>
+  </div>
+
+  {/* Background Flourish Decor (Right) */}
+  <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-20 pointer-events-none hidden sm:block">
+    <svg width="40" height="80" viewBox="0 0 50 100" fill="none">
+      <path d="M40,10 C20,30 20,70 40,90 M30,25 C10,40 10,60 30,75" stroke="#78350f" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  </div>
+
+</div>
       </section>
 
       {/* SECTION 4: LOCATIONS */}
