@@ -64,7 +64,7 @@ export default function MainPage() {
       {/* SECTION 1: COVER */}
      {/* SECTION 1: COVER */}
 <section
-  className="w-full max-w-[480px] min-h-[100svh] mx-auto flex flex-col justify-between items-center text-center px-5 sm:px-7 pt-8 pb-6 bg-cover bg-center bg-no-repeat relative overflow-hidden"
+  className="w-full max-w-[480px] min-h-[60svh] mx-auto flex flex-col justify-between items-center text-center px-5 sm:px-7 pt-12 bg-cover bg-center bg-no-repeat relative overflow-hidden"
   style={{ backgroundImage: `url(${cover})` }}
 >
   {/* Top Header Names */}
@@ -99,6 +99,15 @@ export default function MainPage() {
       "With the blessings of God and our beloved families, we cordially invite you to celebrate the wedding"
     </p>
   </div>
+
+  <div className="flex flex-wrap justify-center gap-2 my-3 z-10">
+  <span className="px-3 py-1 rounded-full bg-amber-900/5 border border-amber-900/20 text-amber-900 font-cherry text-[11px] sm:text-xs">
+    📅 Nov 20, 2026
+  </span>
+  <span className="px-3 py-1 rounded-full bg-amber-900/5 border border-amber-900/20 text-amber-900 font-cherry text-[11px] sm:text-xs">
+    📍 Karur, Tamil Nadu
+  </span>
+</div>
 
   {/* Scroll Indicator */}
   <div className="animate-bounce text-stone-600 font-medium text-xs pb-1 z-10">
