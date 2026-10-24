@@ -123,7 +123,18 @@ export default function MainPage() {
         </h2>
 
         <div className="reveal w-full bg-white/60 backdrop-blur-md border border-amber-200/80 rounded-2xl p-5 sm:p-7 shadow-xl space-y-5 text-stone-800 z-10">
-
+        <div className="space-y-1">
+            <h3 className="font-playfair text-xl sm:text-2xl font-bold text-amber-900">
+              Engagement
+            </h3>
+            <p className="font-cherry text-xs sm:text-sm text-stone-600">
+              7:00 PM Onwards
+            </p>
+            <p className="font-cherry text-sm sm:text-base font-medium pt-1">
+              D.P. Mahal, Pasupathipalayam, Karur.
+            </p>
+          </div>
+          <div className="w-24 h-px bg-amber-300/60 mx-auto" />
           {/* Ceremony */}
           <div className="space-y-1">
             <h3 className="font-playfair text-xl sm:text-2xl font-bold text-amber-900">
