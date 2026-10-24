@@ -86,7 +86,7 @@ export default function MainPage() {
         <div className="flex-1 min-h-[15vh]" />
 
         {/* Invitation Details */}
-        <div className="w-full pt-4 flex flex-col justify-start items-center gap-2 z-10">
+        <div className="w-full pt-1 flex flex-col justify-start items-center gap-2 z-10">
           <div className="font-playfair italic text-lg sm:text-2xl text-amber-900 font-medium leading-tight">
             <span>Jerrold & Priyanka</span>
             <span className="block text-base sm:text-xl text-amber-800">
@@ -171,14 +171,12 @@ export default function MainPage() {
           <div className="w-24 h-px bg-amber-300/60 mx-auto" />
 
           <div className="pt-1">
-            <a
-              href="https://maps.google.com/?q=St.+Theresa%27s+Church+Karur"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-5 py-2 rounded-full bg-amber-900/90 text-white font-cherry text-xs sm:text-sm tracking-wide shadow-md hover:bg-amber-950 transition-colors"
-            >
-              Get Directions 📍
-            </a>
+           <a
+  href="#locations"
+  className="inline-block px-5 py-2 rounded-full bg-amber-900/90 text-white font-cherry text-xs sm:text-sm tracking-wide shadow-md hover:bg-amber-950 transition-colors"
+>
+  Get Directions 📍
+</a>
           </div>
         </div>
 
@@ -279,7 +277,7 @@ export default function MainPage() {
       </section>
 
       {/* SECTION 4: LOCATIONS */}
-      <section className="w-full max-w-[480px] mx-auto bg-[#fdf6ed] px-4 sm:px-6 pt-12 pb-16 flex flex-col items-center text-center relative overflow-hidden">
+      <section id="locations" className="scroll-mt-4 w-full max-w-[480px] mx-auto bg-[#fdf6ed] px-4 sm:px-6 pt-12 pb-16 flex flex-col items-center text-center relative overflow-hidden">
 
         {/* Torn Top Border */}
         <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none z-0 rotate-180">
