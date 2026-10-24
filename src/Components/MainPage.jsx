@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import cover from "../assets/cover.png";
 import groomImg from "../assets/groom.jpg";
@@ -14,6 +15,7 @@ export default function MainPage() {
     seconds: 0,
   });
 
+  // Countdown Timer
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -34,9 +36,32 @@ export default function MainPage() {
     return () => clearInterval(timer);
   }, [targetDate]);
 
+  // Scroll Reveal Animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    const elements = document.querySelectorAll(".reveal, .reveal-zoom, .reveal-left, .reveal-right");
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="w-full bg-[#fdf6ed] flex flex-col items-center select-none">
-      
+
       {/* SECTION 1: Cover Screen */}
       <section
         className="w-full max-w-md h-[100svh] flex flex-col justify-between items-center text-center px-6 pt-6 pb-12 bg-cover bg-center bg-no-repeat relative overflow-hidden"
@@ -44,31 +69,33 @@ export default function MainPage() {
           backgroundImage: `url(${cover})`,
         }}
       >
-        {/* Top Space under the Archway */}
         <div className="h-[12vh] sm:h-[15vh]" />
 
         {/* Header Text + Names */}
         <div className="w-full flex flex-col justify-center items-center gap-1 z-10 px-2">
           <div className="font-cherry text-[10px] sm:text-xs tracking-[1.5px] text-black font-semibold max-w-xs leading-snug drop-shadow-sm">
             <span>Wedding date</span>
-            <span className="block font-bold text-amber-900 mt-0.5">20 November 2026</span>
+            <span className="block font-bold text-amber-900 mt-0.5">
+              20 November 2026
+            </span>
           </div>
 
           <h1 className="font-playfair text-amber-950 pt-3 text-2xl sm:text-4xl font-bold leading-none flex flex-col items-center my-1 drop-shadow-sm">
             <span>JERROLD A</span>
-            <span className="text-xl sm:text-2xl my-0.5">&amp;</span>
+            <span className="text-xl sm:text-2xl my-0.5">&</span>
             <span className="-mt-1">PRIYANKA R</span>
           </h1>
         </div>
 
-        {/* Space reserved for the Swans */}
         <div className="h-[28vh] sm:h-[30vh]" />
 
         {/* Remaining Details */}
         <div className="w-full flex-1 pt-6 flex flex-col justify-start items-center gap-2 z-10">
           <div className="font-playfair italic text-lg sm:text-2xl text-amber-900 font-medium leading-tight">
-            <span>Jerrold &amp; Priyanka</span>
-            <span className="block text-base sm:text-xl text-amber-800">warmly invite you</span>
+            <span>Jerrold & Priyanka</span>
+            <span className="block text-base sm:text-xl text-amber-800">
+              warmly invite you
+            </span>
           </div>
 
           <p className="font text-[11px] sm:text-xs tracking-[1px] text-stone-800 uppercase font-medium mt-2 max-w-xs leading-relaxed">
@@ -76,12 +103,23 @@ export default function MainPage() {
           </p>
         </div>
 
+        <div className="flex flex-wrap gap-4 pt-2">
+          <a
+            href="/in.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 rounded-full bg-amber-900/90 text-white font-cherry text-xs sm:text-sm tracking-wide shadow-md hover:bg-amber-950 transition-all duration-200 flex items-center gap-1.5"
+          >
+            View Invitation 📄
+          </a>
+        </div>
+
         {/* Scroll Indicator */}
         <div className="animate-bounce text-stone-600 font-medium text-xs pb-1 z-10">
           Scroll Down ↓
         </div>
 
-        {/* Non-linear Torn Paper Bottom Border 1 */}
+        {/* Torn Paper Bottom Border */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none z-0">
           <svg
             className="relative block w-full h-[32px] sm:h-[48px]"
@@ -98,13 +136,15 @@ export default function MainPage() {
 
       {/* SECTION 2: Event Details & Venue */}
       <section className="w-full max-w-md bg-[#fdf6ed] px-4 pt-8 pb-10 flex flex-col items-center text-center relative overflow-hidden">
-        <h2 className="font-playfair text-3xl sm:text-4xl italic text-amber-950 border-b border-amber-900/20 pb-3 w-full max-w-lg mb-6">
-          Event Details &amp; Venue
+
+        <h2 className="reveal font-playfair text-3xl sm:text-4xl italic text-amber-950 border-b border-amber-900/20 pb-3 w-full max-w-lg mb-6">
+          Event Details & Venue
         </h2>
 
-        {/* Semi-Transparent Glass Card */}
-        <div className="w-full max-w-lg bg-white/60 backdrop-blur-md border border-amber-200/80 rounded-2xl p-5 sm:p-7 shadow-xl space-y-5 text-stone-800 z-10">
-          {/* Holy Mass / Ceremony */}
+        {/* Glass Card */}
+        <div className="reveal w-full max-w-lg bg-white/60 backdrop-blur-md border border-amber-200/80 rounded-2xl p-5 sm:p-7 shadow-xl space-y-5 text-stone-800 z-10">
+
+          {/* Wedding Ceremony */}
           <div className="space-y-1">
             <h3 className="font-playfair text-xl sm:text-2xl font-bold text-amber-900">
               Wedding Ceremony
@@ -134,7 +174,7 @@ export default function MainPage() {
 
           <div className="w-24 h-[1px] bg-amber-300/60 mx-auto" />
 
-          {/* Get Directions Button */}
+          {/* Get Directions */}
           <div className="pt-1">
             <button className="px-5 py-2 rounded-full bg-amber-900/90 text-white font-cherry text-xs sm:text-sm tracking-wide shadow-md hover:bg-amber-900 transition-colors">
               Get Directions 📍
@@ -142,7 +182,7 @@ export default function MainPage() {
           </div>
         </div>
 
-        {/* Non-linear Torn Paper Bottom Border 2 */}
+        {/* Torn Paper Bottom Border */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none z-0">
           <svg
             className="relative block w-full h-[28px] sm:h-[40px]"
@@ -157,14 +197,15 @@ export default function MainPage() {
         </div>
       </section>
 
-      {/* SECTION 3: Live Countdown & Couple Profile Cards */}
+      {/* SECTION 3: Countdown & Couple Profiles */}
       <section className="w-full max-w-md bg-[#f7e5d1] px-6 pt-6 pb-6 flex flex-col items-center text-center">
-        <h2 className="font-playfair text-3xl sm:text-4xl italic text-amber-950 border-b border-amber-900/20 pb-3 w-full mb-6">
+
+        <h2 className="reveal font-playfair text-3xl sm:text-4xl italic text-amber-950 border-b border-amber-900/20 pb-3 w-full mb-6">
           The Celebration Begins In
         </h2>
 
-        {/* Live Countdown Grid */}
-        <div className="grid grid-cols-4 gap-2 sm:gap-3 w-full max-w-xs mb-8">
+        {/* Countdown Grid */}
+        <div className="reveal-zoom grid grid-cols-4 gap-2 sm:gap-3 w-full max-w-xs mb-8">
           {[
             { label: "Days", value: timeLeft.days },
             { label: "Hours", value: timeLeft.hours },
@@ -185,8 +226,8 @@ export default function MainPage() {
           ))}
         </div>
 
-        {/* Warm Closing Note */}
-        <div className="space-y-2 pt-2 mb-6">
+        {/* Closing Note */}
+        <div className="reveal space-y-2 pt-2 mb-6">
           <p className="font-playfair italic text-2xl sm:text-3xl text-amber-900">
             We look forward to seeing you!
           </p>
@@ -197,11 +238,12 @@ export default function MainPage() {
             With Love
           </p>
         </div>
-        
-        {/* Couple Profile Circles (Groom & Bride) */}
+
+        {/* Couple Profiles */}
         <div className="flex justify-center items-center gap-6 sm:gap-8 w-full max-w-sm mb-2">
-          {/* Groom Profile */}
-          <div className="flex flex-col items-center">
+
+          {/* Groom */}
+          <div className="reveal-left flex flex-col items-center">
             <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-amber-900/30 overflow-hidden shadow-lg bg-amber-100 relative">
               <img
                 src={groomImg}
@@ -217,8 +259,8 @@ export default function MainPage() {
             </p>
           </div>
 
-          {/* Bride Profile */}
-          <div className="flex flex-col items-center">
+          {/* Bride */}
+          <div className="reveal-right flex flex-col items-center">
             <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-amber-900/30 overflow-hidden shadow-lg bg-amber-100 relative">
               <img
                 src={brideImg}
@@ -238,8 +280,8 @@ export default function MainPage() {
 
       {/* SECTION 4: Location & Map Links */}
       <section className="w-full max-w-md bg-[#fdf6ed] px-6 pt-8 pb-16 flex flex-col items-center text-center relative overflow-hidden">
-        
-        {/* Non-linear Torn Paper Top Border */}
+
+        {/* Torn Paper Top Border */}
         <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none z-0 rotate-180">
           <svg
             className="relative block w-full h-[28px] sm:h-[40px]"
@@ -253,23 +295,24 @@ export default function MainPage() {
           </svg>
         </div>
 
-        {/* Section Heading */}
-        <h2 className="font-playfair text-3xl sm:text-4xl italic text-amber-950 mb-2 z-10 pt-2">
-          Location &amp; Venues
+        {/* Heading */}
+        <h2 className="reveal font-playfair text-3xl sm:text-4xl italic text-amber-950 mb-2 z-10 pt-2">
+          Location & Venues
         </h2>
-        <p className="font-cherry text-xs sm:text-sm text-stone-600 mb-8 max-w-xs z-10">
+
+        <p className="reveal font-cherry text-xs sm:text-sm text-stone-600 mb-8 max-w-xs z-10">
           Tap below to view the locations on Google Maps
         </p>
 
-        {/* Two Circular Location Links */}
+        {/* Location Circles */}
         <div className="flex justify-center items-center gap-6 sm:gap-8 w-full max-w-sm z-10">
-          
-          {/* Church Location Circle Link */}
+
+          {/* Church */}
           <a
             href="https://maps.google.com/?q=St.+Theresa's+Church+Karur"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center group cursor-pointer"
+            className="reveal-left flex flex-col items-center group cursor-pointer"
           >
             <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-amber-900/30 bg-white/80 backdrop-blur-md shadow-xl flex flex-col justify-center items-center p-3 transition-transform duration-300 group-hover:scale-105 group-hover:border-amber-900">
               <span className="text-2xl sm:text-3xl mb-1">⛪</span>
@@ -285,12 +328,12 @@ export default function MainPage() {
             </h3>
           </a>
 
-          {/* Mahal Location Circle Link */}
+          {/* Mahal */}
           <a
             href="https://maps.google.com/?q=DP+Mahal+Pasupathipalayam+Karur"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center group cursor-pointer"
+            className="reveal-right flex flex-col items-center group cursor-pointer"
           >
             <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-amber-900/30 bg-white/80 backdrop-blur-md shadow-xl flex flex-col justify-center items-center p-3 transition-transform duration-300 group-hover:scale-105 group-hover:border-amber-900">
               <span className="text-2xl sm:text-3xl mb-1">🏛️</span>
