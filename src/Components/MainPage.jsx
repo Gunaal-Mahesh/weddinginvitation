@@ -75,7 +75,7 @@ export default function MainPage() {
             </span>
           </div>
 
-          <h1 className="font-playfair text-amber-950 pt-3 text-2xl sm:text-4xl font-bold leading-tight flex flex-col items-center my-1 drop-shadow-sm">
+          <h1 className="font-playfair text-amber-950  text-2xl sm:text-4xl font-bold leading-tight flex flex-col items-center my-1 drop-shadow-sm">
             <span>JERROLD A</span>
             <span className="text-xl sm:text-2xl my-0.5">&</span>
             <span>PRIYANKA R</span>

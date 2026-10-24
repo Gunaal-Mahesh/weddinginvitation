@@ -10,12 +10,12 @@ export default function Seal({ onOpen }) {
     // 1. Start envelope flap opening + seal ripple (0ms - 3300ms)
     setStage("opening");
 
-    // 2. Trigger glittering flash effect (at 3300ms)
+    // 2. Trigger glittering flash effect (at 600ms)
     setTimeout(() => {
       setStage("flash");
     }, 600);
 
-    // 3. Complete transition to main page (at 4700ms)
+    // 3. Complete transition to main page (at 2000ms)
     setTimeout(() => {
       onOpen?.();
     }, 2000);
@@ -72,12 +72,19 @@ export default function Seal({ onOpen }) {
               </>
             )}
 
-            <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full flex items-center justify-center bg-[#fdfaf2] border-[5px] border-[#d0b58a] shadow-[0_10px_28px_rgba(0,0,0,0.6)]">
-              <div className="absolute inset-[8px] rounded-full border border-[#e6d8c1]" />
-              <div className="relative z-10 flex items-center justify-center font-serif text-[#af916b]">
-                <span className="text-3xl sm:text-4xl italic">J</span>
-                <span className="text-lg mx-1 font-sans">&amp;</span>
-                <span className="text-3xl sm:text-4xl italic">P</span>
+            {/* Embossed Wax Seal Badge */}
+            <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full flex items-center justify-center bg-[#f3ebd9] border-4 border-[#d3c2a3] shadow-[inset_0_3px_6px_rgba(0,0,0,0.2),0_10px_28px_rgba(0,0,0,0.6)]">
+              {/* Outer Decorative Dashed Ring */}
+              <div className="absolute inset-2 rounded-full border border-dashed border-[#bfa882]/70 pointer-events-none" />
+              
+              {/* Inner Decorative Accent Ring */}
+              <div className="absolute inset-4 rounded-full border border-[#d0b58a]/40 pointer-events-none" />
+              
+              {/* Monogram Text (J ❤️ P) */}
+              <div className="relative z-10 flex items-center justify-center font-cinzel italic font-bold text-amber-950 text-2xl sm:text-3xl tracking-tight drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]">
+                <span>J</span>
+                <span className="text-base sm:text-xl mx-1 not-italic">❤️</span>
+                <span>P</span>
               </div>
             </div>
 
@@ -100,7 +107,6 @@ export default function Seal({ onOpen }) {
             {/* Floating Glitter Particles */}
             <div className="absolute inset-0 flex items-center justify-center">
               {[...Array(20)].map((_, i) => {
-                // Generate random spread angles & distances for each glitter particle
                 const angle = (i * 18) * (Math.PI / 180);
                 const distance = 80 + (i % 5) * 35;
                 const tx = Math.cos(angle) * distance;
