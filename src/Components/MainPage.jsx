@@ -128,7 +128,10 @@ export default function MainPage() {
               Engagement
             </h3>
             <p className="font-cherry text-xs sm:text-sm text-stone-600">
-              7:00 PM Onwards
+               19 November 
+            </p>
+            <p className="font-cherry text-xs sm:text-sm text-stone-600">
+               7:00 PM Onwards
             </p>
             <p className="font-cherry text-sm sm:text-base font-medium pt-1">
               D.P. Mahal, Pasupathipalayam, Karur.
@@ -140,6 +143,9 @@ export default function MainPage() {
             <h3 className="font-playfair text-xl sm:text-2xl font-bold text-amber-900">
               Wedding Ceremony
             </h3>
+              <p className="font-cherry text-xs sm:text-sm text-stone-600">
+               20 November 
+            </p>
             <p className="font-cherry text-xs sm:text-sm text-stone-600">
               Holy Mass: 9:15 AM onwards
             </p>
@@ -155,6 +161,9 @@ export default function MainPage() {
             <h3 className="font-playfair text-xl sm:text-2xl font-bold text-amber-900">
               Reception
             </h3>
+              <p className="font-cherry text-xs sm:text-sm text-stone-600">
+               20 November 
+            </p>
             <p className="font-cherry text-xs sm:text-sm text-stone-600">
               12:00 PM Onwards
             </p>
